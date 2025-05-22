@@ -59,7 +59,7 @@ export default function About() {
                 Based in Enugu, Nigeria, I've worked with a range of clients from startups to large corporations, 
                 helping them achieve their business goals through thoughtful and strategic design and development.
               </p>
-              <Button href="/resume.pdf" variant="primary" className="flex items-center">
+              <Button href="https://drive.google.com/file/d/1V_fWHHvwQZp89nogK3de1RwivGwqMEfW/view?usp=sharing" variant="primary" className="flex items-center">
                 <Download size={18} className="mr-2" /> Download Resume
               </Button>
             </div>
