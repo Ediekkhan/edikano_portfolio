@@ -39,9 +39,9 @@ const projects = [
   {
     title: 'E-commerce Platform',
     description: 'Created a full-featured e-commerce platform with product listings, cart, checkout, and payment integration.',
-    tech: ['Next.js', 'MongoDB', 'Stripe', 'TailwindCSS'],
-    link: '#',
-    github: 'https://github.com',
+    tech: ['React', 'TailwindCSS'],
+    link: 'https://scarlet-store.vercel.app/',
+    github: 'https://github.com/Ediekkhan/scarlet-store',
     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     category: 'Web App'
   },
@@ -62,24 +62,6 @@ const projects = [
     github: 'https://github.com',
     image: 'https://images.pexels.com/photos/53621/calculator-calculation-insurance-finance-53621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     category: 'Web App'
-  },
-  {
-    title: 'Travel Blog UI Kit',
-    description: 'Designed a comprehensive UI kit for travel bloggers with customizable components and layouts.',
-    tech: ['Figma', 'Illustrator', 'HTML/CSS'],
-    link: '#',
-    github: 'https://github.com',
-    image: 'https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'UI/UX'
-  },
-  {
-    title: 'Mobile Weather App',
-    description: 'Developed a weather application with location-based forecasts, animated visualizations, and alerts.',
-    tech: ['React Native', 'API Integration', 'Geolocation'],
-    link: '#',
-    github: 'https://github.com',
-    image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'Other'
   }
 ];
 
