@@ -25,7 +25,7 @@ export default function Button({
   disabled = false
 }: ButtonProps) {
   // Base styles
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all rounded-lg focus-ring';
   
   // Variant styles
   const variantStyles = {
@@ -62,8 +62,8 @@ export default function Button({
       <a 
         href={href} 
         className={combinedStyles}
-        target="_blank" 
-        rel="noopener noreferrer"
+        target={href.startsWith('mailto:') || href.startsWith('tel:') ? undefined : '_blank'}
+        rel={href.startsWith('mailto:') || href.startsWith('tel:') ? undefined : 'noopener noreferrer'}
       >
         {children}
       </a>

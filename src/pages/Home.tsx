@@ -1,208 +1,55 @@
-import { motion } from 'framer-motion';
+import { ArrowRight, Code2, Gauge, Layers3, Sparkles } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code, Layout, Terminal, Zap } from 'lucide-react';
-import PageTransition from '../components/PageTransition';
 import Button from '../components/Button';
+import PageTransition from '../components/PageTransition';
 import ProjectCard from '../components/ProjectCard';
-import profilepng from "../asset/WhatsApp Image 2025-05-18 at 17.16.31.jpeg"
+import { useCaseStudies } from '../hooks/useCaseStudies';
+import { usePageMetadata } from '../hooks/usePageMetadata';
 
+const experience = [
+  { period: '2025—2026', role: 'Frontend Engineer', company: 'PK5 Holdings' },
+  { period: '2024—2025', role: 'Software Engineer', company: 'Alozinotechno.com Ltd' },
+  { period: '2022—2023', role: 'Front-end Web Developer', company: 'AfricInnovate' },
+  { period: '2019—2021', role: 'Web Content Manager', company: 'FootballTelegram' },
+];
 
-// Sample featured projects
-const featuredProjects = [
-  {
-    title: 'AfricInnovate Dashboard',
-    description: 'Implemented responsive dashboard UI and state management using React, Context API, and Redux.',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Redux'],
-    link: 'https://www.africinnovate.com/',
-    github: 'https://github.com',
-    image: 'https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  },
-  {
-    title: 'Law Firm UI',
-    description: 'Built modular UI components and improved performance by 30% using lazy loading and code splitting.',
-    tech: ['React', 'SASS', 'React Router'],
-    link: '#',
-    github: 'https://github.com',
-    image: 'https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  }
+const capabilities = [
+  { icon: Code2, title: 'React engineering', text: 'Typed, reusable interfaces built for maintainability and real product change.' },
+  { icon: Gauge, title: 'Accessible performance', text: 'Fast experiences with semantic markup, keyboard support, and measurable performance.' },
+  { icon: Layers3, title: 'Design systems', text: 'Consistent components and visual rules that help products and teams scale.' },
+  { icon: Sparkles, title: 'UI implementation', text: 'Thoughtful interaction details that preserve design intent across screen sizes.' },
 ];
 
 export default function Home() {
+  usePageMetadata('Frontend Developer', 'Edikan Okon builds fast, accessible React products for startups and growing teams.');
+  const { caseStudies, isLoading } = useCaseStudies();
+  const reduceMotion = useReducedMotion();
+  const [flagship, ...supporting] = caseStudies;
+
   return (
     <PageTransition>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-        <div className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-7">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Frontend Developer <span className="text-teal-400">&</span> UI Designer
-                </h1>
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                  I build exceptional digital experiences that are fast, accessible, and visually appealing. Let's turn your vision into reality.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Button to="/projects" variant="primary" size="lg">
-                    View My Work
-                  </Button>
-                  <Button to="/contact" variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10">
-                    Contact Me
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-            <motion.div 
-              className="md:col-span-5 flex justify-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-teal-400 shadow-xl">
-                  <img 
-                    src={profilepng}
-                    alt="Edikan Okon" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-4 -right-4 bg-white text-gray-900 py-2 px-4 rounded-lg shadow-lg font-medium">
-                  <span className="text-teal-600">3+ years</span> experience
-                </div>
-              </div>
-            </motion.div>
-          </div>
+      <section className="relative overflow-hidden bg-gray-950 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(20,184,166,0.2),transparent_30%)]" aria-hidden="true" />
+        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-36">
+          <motion.div className="max-w-5xl" initial={reduceMotion ? undefined : { opacity: 0, y: 20 }} animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}>
+            <p className="mb-6 font-mono text-sm uppercase tracking-[0.24em] text-teal-300">Frontend engineer · UI craft</p>
+            <h1 className="text-4xl font-bold leading-[1.08] tracking-tight md:text-6xl lg:text-7xl">I’m Edikan Okon, a frontend developer building fast, accessible React products for startups and growing teams.</h1>
+            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-300 md:text-xl">Based in Enugu, Nigeria <span aria-hidden="true">·</span> Available for remote frontend roles and selected freelance projects.</p>
+            <div className="mt-10 flex flex-wrap gap-4"><Button to="/projects" size="lg">Explore case studies</Button><Button to="/contact" variant="outline" size="lg" className="border-gray-600 text-white hover:bg-white/10">Start a conversation</Button></div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">What I Do</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              I specialize in creating responsive, user-friendly interfaces with clean, efficient code.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div 
-              className="bg-white p-6 rounded-xl shadow-sm"
-              whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-            >
-              <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 mb-4">
-                <Layout size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">UI/UX Design</h3>
-              <p className="text-gray-600">
-                Creating intuitive and engaging user interfaces with a focus on user experience.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-white p-6 rounded-xl shadow-sm"
-              whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-            >
-              <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 mb-4">
-                <Code size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Frontend Development</h3>
-              <p className="text-gray-600">
-                Building responsive, fast and accessible websites using modern web technologies.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-white p-6 rounded-xl shadow-sm"
-              whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.3 }}
-            >
-              <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 mb-4">
-                <Terminal size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Web Applications</h3>
-              <p className="text-gray-600">
-                Developing interactive web applications with modern JavaScript frameworks.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-white p-6 rounded-xl shadow-sm"
-              whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.4 }}
-            >
-              <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 mb-4">
-                <Zap size={24} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Performance Optimization</h3>
-              <p className="text-gray-600">
-                Improving website speed and performance for better user experience.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <section className="py-20 md:py-28" aria-labelledby="flagship-heading"><div className="mx-auto max-w-6xl px-6"><div className="mb-10 flex items-end justify-between gap-6"><div><p className="eyebrow">Selected work · 01</p><h2 id="flagship-heading" className="mt-3 text-3xl font-bold md:text-4xl">Flagship case study</h2></div>{isLoading ? <span className="text-sm text-gray-500" role="status">Checking for new work…</span> : null}</div>{flagship ? <ProjectCard project={flagship} featured /> : null}</div></section>
 
-      {/* Featured Projects */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-3xl font-bold mb-3">Featured Projects</h2>
-              <p className="text-gray-600">
-                Some of my recent work that I'm proud of.
-              </p>
-            </div>
-            <Link 
-              to="/projects" 
-              className="text-teal-600 hover:text-teal-700 font-medium flex items-center group"
-            >
-              View All Projects
-              <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-gray-50 py-20 md:py-28" aria-labelledby="supporting-heading"><div className="mx-auto max-w-6xl px-6"><div className="mb-10 flex items-end justify-between gap-6"><div><p className="eyebrow">Selected work · 02—03</p><h2 id="supporting-heading" className="mt-3 text-3xl font-bold md:text-4xl">Supporting case studies</h2></div><Link to="/projects" className="focus-ring hidden items-center gap-2 rounded text-sm font-medium text-teal-700 sm:flex">All work <ArrowRight size={16} /></Link></div><div className="grid gap-8 md:grid-cols-2">{supporting.slice(0, 2).map((project) => <ProjectCard key={project._id} project={project} />)}{supporting.length === 0 ? <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-8 text-gray-600 md:col-span-2">More verified case studies will appear here as they are published in Sanity.</div> : null}</div></div></section>
 
-      {/* CTA Section */}
-      <section className="bg-gray-900 text-white py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to bring your ideas to life?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Let's collaborate to create something amazing together.
-          </p>
-          <Button 
-            to="/contact" 
-            variant="primary" 
-            size="lg" 
-            className="bg-teal-500 hover:bg-teal-600 focus:ring-teal-400"
-          >
-            Get in Touch
-          </Button>
-        </div>
-      </section>
+      <section className="py-20 md:py-28" aria-labelledby="experience-heading"><div className="mx-auto max-w-6xl px-6"><p className="eyebrow">Experience</p><h2 id="experience-heading" className="mt-3 text-3xl font-bold md:text-4xl">A track record across product and content</h2><ol className="mt-12 border-t border-gray-200">{experience.map((item) => <li key={`${item.period}-${item.company}`} className="grid gap-2 border-b border-gray-200 py-6 sm:grid-cols-[10rem_1fr_1fr] sm:items-baseline"><span className="font-mono text-sm text-teal-700">{item.period}</span><strong className="text-lg">{item.role}</strong><span className="text-gray-600">{item.company}</span></li>)}</ol></div></section>
+
+      <section className="bg-gray-950 py-20 text-white md:py-28" aria-labelledby="capabilities-heading"><div className="mx-auto max-w-6xl px-6"><p className="font-mono text-sm uppercase tracking-[0.2em] text-teal-300">Core capabilities</p><h2 id="capabilities-heading" className="mt-3 max-w-2xl text-3xl font-bold md:text-4xl">Design judgment backed by frontend engineering.</h2><div className="mt-12 grid gap-px overflow-hidden rounded-2xl bg-gray-700 md:grid-cols-2 lg:grid-cols-4">{capabilities.map(({ icon: Icon, title, text }) => <article key={title} className="bg-gray-900 p-7"><Icon className="text-teal-300" aria-hidden="true" /><h3 className="mt-8 text-xl font-semibold">{title}</h3><p className="mt-3 leading-relaxed text-gray-400">{text}</p></article>)}</div></div></section>
+
+      <section className="bg-teal-500 py-20 text-gray-950"><div className="mx-auto max-w-4xl px-6 text-center"><p className="font-mono text-sm font-semibold uppercase tracking-[0.2em]">Have a useful problem to solve?</p><h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">Let’s build something clear, fast, and dependable.</h2><Button to="/contact" variant="secondary" size="lg" className="mt-8">Get in touch</Button></div></section>
     </PageTransition>
   );
 }
