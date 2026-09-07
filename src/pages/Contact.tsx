@@ -3,8 +3,10 @@ import { MapPin, Mail, Phone, Clock, Github as GitHub, Linkedin, Twitter } from 
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import ContactForm from '../components/ContactForm';
+import { usePageMetadata } from '../hooks/usePageMetadata';
 
 export default function Contact() {
+  usePageMetadata('Contact', 'Contact Edikan Okon about remote frontend roles and selected freelance projects.');
   return (
     <PageTransition>
       {/* Hero Section */}
@@ -47,7 +49,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Email</h3>
-                    <a href="eddychristantus@gmail.com" className="text-gray-600 hover:text-teal-600 transition-colors">
+                    <a href="mailto:eddychristantus@gmail.com" className="focus-ring rounded text-gray-600 hover:text-teal-600 transition-colors">
                       eddychristantus@gmail.com
                     </a>
                   </div>
@@ -64,7 +66,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                    <a href="tel:+2341234567890" className="text-gray-600 hover:text-teal-600 transition-colors">
+                    <a href="tel:+2347010135914" className="focus-ring rounded text-gray-600 hover:text-teal-600 transition-colors">
                       +234 701 013 5914
                     </a>
                   </div>

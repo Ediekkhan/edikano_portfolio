@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#030712"/>
+  <circle cx="1040" cy="80" r="380" fill="#0f766e" opacity=".45"/>
+  <text x="90" y="245" fill="#2dd4bf" font-family="monospace" font-size="25" letter-spacing="5">FRONTEND DEVELOPER · UI CRAFT</text>
+  <text x="90" y="340" fill="white" font-family="Arial, sans-serif" font-weight="700" font-size="78">Edikan Okon</text>
+  <text x="90" y="410" fill="#d1d5db" font-family="Arial, sans-serif" font-size="32">Fast, accessible React products.</text>
+</svg>

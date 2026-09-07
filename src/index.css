@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-gray-950 antialiased; }
+  ::selection { @apply bg-teal-200 text-gray-950; }
+}
+
+@layer components {
+  .focus-ring { @apply outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2; }
+  .eyebrow { @apply font-mono text-sm font-semibold uppercase tracking-[0.2em] text-teal-700; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

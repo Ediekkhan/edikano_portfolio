@@ -4,6 +4,7 @@ import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
 import { Download, CheckCircle2 } from 'lucide-react';
 import profilepng from "../asset/WhatsApp Image 2025-05-18 at 17.16.31.jpeg"
+import { usePageMetadata } from '../hooks/usePageMetadata';
 
 // Skills data
 const skills = [
@@ -15,24 +16,23 @@ const skills = [
 
 // Timeline data
 const timeline = [
-  
   {
-    year: "2024 - 2025",
-    title: "Frontend Developer",
-    company: "AlozinoTech Solutions",
-    description: "Developed scalable frontend architecture and implemented UI components for enterprise applications."
+    year: "Dec 2025 - Aug 2026",
+    title: "Frontend Engineer",
+    company: "PK5 Holdings",
+    description: "Engineered the frontend architecture for PK5 Agro-Allied and co-developed PK5 Mining's enterprise portal and recruitment system from Figma prototypes."
   },
   {
-    year: "2023 ",
-    title: "UI/UX Developer",
-    company: "The Scarlet Store",
-    description: "Designed and implemented user interfaces for various clients, focusing on Luxury outfits"
+    year: "Jul 2024 - Nov 2025",
+    title: "Software Engineer",
+    company: "Alozinotechno.com Ltd",
+    description: "Built React and TypeScript interfaces, integrated REST APIs, and established Jest testing strategies with over 90% code coverage."
   },
   {
-    year: "2022 - 2023",
-    title: "Frontend Developer",
-    company: "AfricInnovate Tech",
-    description: "Collaborating with a team of 5 developers to build responsive and accessible web applications for clients across Africa."
+    year: "Oct 2022 - Mar 2023",
+    title: "Front-end Web Developer",
+    company: "AfricInnovate",
+    description: "Built accessible, design-system-led interfaces from Figma, including authentication flows, state management, pagination, and automated tests."
   },
   {
     year: "2019 - 2021",
@@ -43,6 +43,7 @@ const timeline = [
 ];
 
 export default function About() {
+  usePageMetadata('About', 'Learn about Edikan Okon’s frontend experience, approach, and technical capabilities.');
   return (
     <PageTransition>
       {/* Hero Section */}
@@ -56,7 +57,7 @@ export default function About() {
                 building beautiful, functional, and user-centered digital experiences.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Based in Enugu, Nigeria, I've worked with a range of clients from startups to large corporations, 
+                Based in Lagos, Nigeria, I've worked with a range of clients from startups to large corporations, 
                 helping them achieve their business goals through thoughtful and strategic design and development.
               </p>
               <Button href="https://drive.google.com/file/d/1V_fWHHvwQZp89nogK3de1RwivGwqMEfW/view?usp=sharing" variant="primary" className="flex items-center">
@@ -74,6 +75,8 @@ export default function About() {
                 <img 
                   src={profilepng}
                   alt="Edikan Okon" 
+                  width="800"
+                  height="1000"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -193,46 +196,17 @@ export default function About() {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div 
-                className="aspect-square rounded-lg overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3 }}
-              >
-                <img 
-                  src="https://images.pexels.com/photos/1002638/pexels-photo-1002638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                  alt="Photography hobby" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div 
-                className="aspect-square rounded-lg overflow-hidden row-span-2"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              >
-                <img 
-                  src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                  alt="Reading books" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div 
-                className="aspect-square rounded-lg overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              >
-                <img 
-                  src="https://images.pexels.com/photos/4126724/pexels-photo-4126724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                  alt="Coding session" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+            <div className="grid gap-4">
+              {[
+                ['01', 'Understand the real problem before choosing the interface.'],
+                ['02', 'Make accessibility and performance part of the implementation.'],
+                ['03', 'Communicate decisions so the team can maintain what ships.'],
+              ].map(([number, principle]) => (
+                <div key={number} className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+                  <span className="font-mono text-sm font-semibold text-teal-700">{number}</span>
+                  <p className="mt-3 text-lg font-medium text-gray-900">{principle}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

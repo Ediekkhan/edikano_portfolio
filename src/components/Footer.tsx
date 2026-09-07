@@ -43,10 +43,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-6 pt-6 text-center md:flex md:justify-between md:text-left">
           <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Edikan Okon. All rights reserved.</p>
-          <div className="mt-2 md:mt-0 text-sm text-gray-400 flex flex-col md:flex-row md:space-x-4">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors mt-1 md:mt-0">Terms of Service</a>
-          </div>
+          <p className="mt-2 text-sm text-gray-500 md:mt-0">Designed and built with React, TypeScript, and care.</p>
         </div>
       </div>
     </footer>
