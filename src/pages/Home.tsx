@@ -22,7 +22,7 @@ const capabilities = [
 ];
 
 export default function Home() {
-  usePageMetadata('Frontend Developer', 'Edikan Okon builds fast, accessible React products for startups and growing teams.');
+  usePageMetadata('Software Engineer', 'Edikan Okon builds fast, accessible React products for startups and growing teams.');
   const { caseStudies, isLoading } = useCaseStudies();
   const reduceMotion = useReducedMotion();
   const [flagship, ...supporting] = caseStudies;
@@ -34,7 +34,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-36">
           <motion.div className="max-w-5xl" initial={reduceMotion ? undefined : { opacity: 0, y: 20 }} animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}>
             <p className="mb-6 font-mono text-sm uppercase tracking-[0.24em] text-teal-300">Frontend engineer · UI craft</p>
-            <h1 className="text-4xl font-bold leading-[1.08] tracking-tight md:text-6xl lg:text-7xl">I’m Edikan Okon, a frontend developer building fast, accessible React products for startups and growing teams.</h1>
+            <h1 className="text-4xl font-bold leading-[1.08] tracking-tight md:text-6xl lg:text-7xl">I’m Edikan Okon, a Software Engineer building fast, accessible React products for startups and growing teams.</h1>
             <p className="mt-8 max-w-3xl text-lg leading-relaxed text-gray-300 md:text-xl">Based in Lagos, Nigeria <span aria-hidden="true">·</span> Available for remote frontend roles and selected freelance projects.</p>
             <div className="mt-10 flex flex-wrap gap-4"><Button to="/projects" size="lg">Explore case studies</Button><Button to="/contact" variant="outline" size="lg" className="border-gray-600 text-white hover:bg-white/10">Start a conversation</Button></div>
           </motion.div>

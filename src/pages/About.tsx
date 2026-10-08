@@ -53,7 +53,7 @@ export default function About() {
             <div>
               <h1 className="text-4xl font-bold mb-6">About Me</h1>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                I'm Edikan Okon, a passionate frontend developer and UI/UX enthusiast with over 3 years of experience 
+                I'm Edikan Okon, a passionate Software Engineer and UI/UX enthusiast with over 3 years of experience 
                 building beautiful, functional, and user-centered digital experiences.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
@@ -82,7 +82,7 @@ export default function About() {
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
                 <p className="font-bold text-gray-900">Edikan Okon</p>
-                <p className="text-teal-600">Frontend Developer</p>
+                <p className="text-teal-600">Software Engineer</p>
               </div>
             </motion.div>
           </div>

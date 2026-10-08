@@ -8,7 +8,7 @@ export const fallbackCaseStudies: CaseStudy[] = [
     title: 'AfricInnovate Platform',
     slug: 'afric-innovate-platform',
     client: 'AfricInnovate Tech',
-    role: 'Frontend Developer',
+    role: 'Software Engineer',
     problem: 'Build responsive application interfaces and dependable client-side state for a growing African technology platform.',
     architectureDecisions: ['Reusable React interface components', 'Typed frontend development', 'Centralized state management'],
     metrics: [

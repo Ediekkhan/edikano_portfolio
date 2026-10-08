@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const DEFAULT_DESCRIPTION = 'Edikan Okon is a frontend developer building fast, accessible React products for startups and growing teams.';
+const DEFAULT_DESCRIPTION = 'Edikan Okon is a Software Engineer building fast, accessible React products for startups and growing teams.';
 
 export function usePageMetadata(title: string, description = DEFAULT_DESCRIPTION) {
   useEffect(() => {
@@ -22,7 +22,7 @@ export function usePageMetadata(title: string, description = DEFAULT_DESCRIPTION
     if (ogUrl) ogUrl.content = currentUrl;
 
     return () => {
-      document.title = 'Edikan Okon | Frontend Developer';
+      document.title = 'Edikan Okon | Software Engineer';
     };
   }, [description, title]);
 }
